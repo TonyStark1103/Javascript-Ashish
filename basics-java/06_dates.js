@@ -15,10 +15,8 @@ console.log(typeof date);    // obeject would be the answer
 
 */
 
-let mynewdate = new Date(2023, 0, 23);
-console.log(mynewdate);  //   this will print unreadble format
+// let mynewdate = new Date(2023, 0, 23);
+// console.log(mynewdate);  //   this will print unreadble format
 
-console.log(mynewdate.toLocaleDateString());
-
-
+// console.log(mynewdate.toLocaleDateString());
 
