@@ -1,6 +1,7 @@
 // // we use promises to fulfill a task 
 // // for understanding checking that promise it fulfilled or how much time it taking to complete it
 // //  or what's the error that you are getting and catching it
+// please read it carefully to understand
 
 // const promiseone = new Promise(function(resolve, reject){
 
