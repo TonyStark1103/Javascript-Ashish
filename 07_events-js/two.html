@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>MY video</h1>
     <button id="start">Start</button>
     <button id="stop">Stop</button>
     <script>
-        
-        
+        const sayname = function () {
+            console.log("Ashish Garg")
+        }
+
+        const changeText = function () {
+            document.querySelector('h1').innerHTML = 'THis is a turtorial video'
+        }
+        setTimeout(sayname, 3000)
+        const chnageme = setTimeout(changeText, 5000)
+
+        document.getElementById('stop').addEventListener("click", function () {
+            clearTimeout(chnageme)
+            console.log("stopped")
+        })
     </script>
 </body>
+
 </html>

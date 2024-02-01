@@ -9,9 +9,9 @@ const changeText = function(){
     document.querySelector('h1').innerHTML = 'THis is a turtorial video'
 }
 setTimeout(sayname, 3000)
-setTimeout(changeText, 5000)
+ const chnageme = setTimeout(changeText, 5000)
 
 document.getElementById('stop').addEventListener("click", function(){
-        clearTimeout(changeText)
+        clearTimeout(chnageme)
         console.log("stopped")
 })
