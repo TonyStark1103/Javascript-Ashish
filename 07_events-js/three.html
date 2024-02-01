@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- // setinterval -->
+    <h1>This is Timeinterval</h1>
+    <button class="button" id="start">START</button>
+    <button class="button" id="stop">STOP</button>
+    
+    <script>
+
+        
+
+        let loopid
+
+        const startname = function(){
+
+            console.log("STARTED")
+            const sayName = function(){
+            console.log("Ashish", Date.now())
+            }
+            loopid = setInterval(sayName, 1000)
+
+        }
+        const stopname = function(){
+            clearInterval(loopid)
+            console.log("STOPPED")
+        }
+
+        
+        // document.querySelector('#start').addEventListener("click", startname)
+    
+        // document.querySelector('#stop').addEventListener("click", stopname)
+
+        // alternative way or you can say my way
+
+        const buttons = document.querySelectorAll('button')
+        buttons.forEach((button)=>{
+            button.addEventListener("click", (e)=>{
+                if (e.target.id === 'start'){
+                    startname()
+                }
+                if(e.target.id === 'stop'){
+                    stopname()
+                }
+            })
+        })
+        
+    </script>
+</body>
+</html>
