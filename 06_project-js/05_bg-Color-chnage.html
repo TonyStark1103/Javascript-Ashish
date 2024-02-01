@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bg-color-changer</title>
+</head>
+<body>
+    <button class="button" id="start">START</button>
+    <button class="button" id="stop">STOP</button>
+
+    <script>
+        // for color change 
+        const randomColor = function(){
+            const hex = '0123456789ABCDEF'
+            let color = '#'
+            for(i=0; i<6; i++){
+            color += hex[Math.floor(Math.random()*16)]
+            }
+            // important thing if you put don't write return here it will will work and jenrate coloe but won't assign it to the 
+            // body background  so return statement is very important
+            return color
+        }
+        console.log(randomColor())
+        let intervalid
+        const startchangingcolor = function(){
+            if(!intervalid){
+                intervalid = setInterval(colorchange, 500)
+            }
+            
+            function colorchange (){ 
+                console.log(randomColor())
+                document.body.style.backgroundColor = randomColor()
+            }
+
+        }
+        const stopchaningcolor = function(){
+            clearInterval(intervalid)
+            intervalid = null
+        }
+        const buttons = document.querySelectorAll('button')
+        buttons.forEach((button)=>{
+            button.addEventListener("click", (e)=>{
+                if (e.target.id === 'start'){
+                    startchangingcolor()
+                }
+                if(e.target.id === 'stop'){
+                    stopchaningcolor()
+                }
+            })
+        })
+        
+    </script>
+</body>
+</html>
